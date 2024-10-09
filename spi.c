@@ -14,7 +14,7 @@ void SPI_init(uint16_t initParams)
     DDR_SPI |= (1 << CS) | (1 << MOSI) | (1 << SCK);
 
     // enable pull up resistor in MISO
-    DDR_SPI |= (1 << MISO);
+    PORT_SPI |= (1 << MISO);
 
     // set SPI params
     SPCR |= ((uint8_t) (initParams >> 8)) | (1 << SPE);
